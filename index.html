@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+  <script src="https://kit.fontawesome.com/870995ee8f.js" crossorigin="anonymous"></script>
+  <title>Lagos JPU</title>
+</head>
+<body>
+  <div class="container">
+    <!-- <h1 class="brand">Word Sacntuary Lagos</h1> -->
+    <div class="wrapper animated bounceInLeft">
+
+      <div class="church-info">
+        
+        <ul>
+          
+          <li><i class="fa-solid fa-house-user"></i><span>Next Level Event Centre</span></li>
+          <div class="address">
+            <li>25, Meiran Road, Off Lagos Abeokuta Expressway, Meiran B/stop, Meiran, Lagos.</li>
+          </div>
+          
+          <li class="space"><i class="fa-solid fa-paper-plane"></i>wordsanctuarylagos@gmail.com</li>
+          
+          <li class="space"><i class="fa-solid fa-square-phone"></i>08095959509 | 08096687052.</li>
+        </ul>
+
+        <div class="social-box">
+          <h3>Connect with us:</h3>
+          <div class="social-icons">
+  
+            <a href="https://www.facebook.com/wordsanctuarypage/"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://twitter.com/word_sanctuary"><i class="fa-brands fa-twitter-square"></i></a>
+            <a href="https://www.instagram.com/wordsanctuaryglobal/"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@WordSanctuaryTV"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div> 
+      </div>
+
+      <!-- <div class="social-icons">
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter-square"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+      </div> -->
+
+      <div class="contact">
+        <div class="head">
+          <img src="./media-img/logo.png" alt="logo">
+          <h3>Contact Us</h3>
+        </div>
+        
+
+        <!-- <fieldset>
+          <legend> Fill the form </legend> -->
+          <form action="" name="contact-us">
+                
+            <div class="form-group">
+              <label for="name">Name:</label>
+              <input type="text" name="name" id="name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="name">Phone Number:</label>
+              <input type="tel" name="name" id="name" required>
+            </div>
+
+            <div class="form-group full">
+              <label for="email">Email:</label>
+              <input type="email" name="email" id="email"required>
+            </div>
+    
+            <div class="form-group full">
+              <label for="message">Message:</label>
+              <textarea name="message" id="message" cols="30" rows="5" required></textarea>
+            </div>
+
+            <button type="button" class="btn-submit" onclick="location.href='https://chat.whatsapp.com/BgziJBcGGby7bOTFkUERMz'"  target="_parent">submit</button>
+    
+            <!-- <button><a class="btn-submit" href="https://chat.whatsapp.com/BgziJBcGGby7bOTFkUERMz" target="_parent">Submit</a></button> -->
+          </form>
+        <!-- </fieldset> -->
+        
+      </div>
+    </div>
+  </div>
+
+  <footer>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/wordsanctuarypage/"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://twitter.com/word_sanctuary"><i class="fa-brands fa-twitter-square"></i></a>
+            <a href="https://www.instagram.com/wordsanctuaryglobal/"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@WordSanctuaryTV"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+
+      <div class="sign">
+        Word Sanctuary Lagos &copy; Copyright 2023.
+      </div>
+  </footer>
+
+  <script>
+    /*****************Script for video*******************/ 
+    // var videoPlayer = document.getElementById("videoPlayer");
+    // var myVideo = document.getElementById("myVideo");
+
+    // var coverImg = document.getElementById("coverImg");
+
+    // function closecover(){
+    //   coverImg.style.display = "none";
+    // }
+
+    // function stopVideo(){
+    //   videoPlayer.style.display = "none";
+    // }
+
+
+    /*****************Script for sheet Data***********************/ 
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxc7uJDmBI2WhwW83jgnr2EVHvbyXlfbcunlHuoWeoQtpTBTtIFLfMU9iU9PxE3ufIZ-w/exec'
+    const form = document.forms['contact-us']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+
+        .then(response => {
+          form.reset()
+          console.log('Success!', response)
+          alert('Successful!')
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
+
+</body>
+</html>
