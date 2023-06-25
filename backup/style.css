@@ -1,0 +1,368 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  box-sizing: border-box;
+}
+
+:root{
+  --shadow: 0 .5rem 1rem rgb(0,0,0,.05);
+  --blue: #0D99FF;
+  --blue-light: #CFEBFF;
+  --blue-dark: #0A7ACC;
+  --background: rgba(0, 3, 3, 0.82);
+  --contact-color-hover: rgb(255, 130, 0);
+  --contact-color: rgb(255, 156, 0);
+
+  --rounded: .25rem;
+  --rounded-md: .5rem;
+}
+
+body{
+  background-color: rgb(23, 23, 23);
+  line-height: 1.6;
+  color: #fff;
+}
+
+.container{
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1em;
+  margin-bottom: 40px;
+}
+
+ul{
+  list-style: none;
+  padding: 0;
+}
+
+.brand{
+  text-align: center;
+}
+
+.container .wrapper{
+  box-shadow: 0 0 20px 0 rgba(0,0,0,1);
+  border-radius: 20px 20px 20px 20px;
+}
+
+.wrapper > *{
+  padding: 1.5em;
+}
+.church-info{
+  background-color: rgba(0, 0, 0,0.9);
+  border-radius: 20px 20px 0 0;
+}
+
+.church-info ul{
+  margin: 0 0 1rem 0;
+}
+
+.church-info ul li{
+  font-size: 14px;
+}
+
+.space{
+  padding-bottom: 15px ;
+}
+
+.church-info ul li span{
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.church-info ul i{
+  color: rgb(255, 156, 0);
+  margin-right: 10px;
+}
+
+.church-info ul .address{
+  margin: 0;
+  padding-left: 28px;
+  padding-bottom: 15px ;
+  max-width: 90%;
+}
+
+.church-info .social-box h3{
+  font-size: 14px;
+  font-weight: 600;
+  padding-bottom: 15px;
+  color: rgb(255, 156, 0);
+}
+
+.social-icons a:hover
+{
+	transform: translateY(-3px);
+}
+
+.social-icons a
+{
+	text-decoration: none;
+	font-size: 20px;
+	margin-right: 20px;
+  color: rgb(255, 156, 0);
+	display: inline-block;
+	transition: transform 0.5s;
+}
+
+.contact{
+  background-image: linear-gradient(rgba(5, 3, 3, 0.9)50%,rgba(0,0,0,0.9)50%), url(./media-img/contact_cover.jpg);
+  background-position: center;
+  background-size: 50%;
+  border-radius: 0 0 20px 20px;
+}
+
+.contact .head{
+    display: flex;
+    margin-bottom: 20px;
+    padding: 0;
+    justify-content:left;
+    align-items:center ;
+    /* background-color: #0A7ACC; */
+}
+
+.contact h3{
+  color: rgb(255, 156, 0);
+}
+
+img{
+  width: 80px;
+}
+
+/* FORM STYLE */
+.contact form{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.contact form label{
+  display: block;
+}
+
+.contact form .form-group{
+  margin: 0;
+}
+
+.contact form .full{
+  grid-column: 1 / 3;
+}
+
+.contact form button, .contact form input, .contact form textarea{
+  width: 100%;
+  padding: 1em;
+  outline: none;
+  color: #fff;
+}
+
+.contact form input, .contact form textarea{
+  border: 1px solid var(--contact-color);
+  background-color: transparent;
+  transition: border 0.5s ease-in-out;
+}
+
+.contact form input, .contact form textarea{
+  border-radius: var(--rounded);
+  border: 1px solid var(--contact-color);
+  background-color: transparent;
+  transition: border 0.5s ease-in-out;
+}
+
+.contact form input:focus,
+.contact form textarea:focus{
+  border-color: var(--contact-color-hover); 
+}
+
+.contact form textarea{
+  resize: none;
+  overflow-y: auto;
+}
+
+.contact form label{
+  margin-bottom: 10px;
+}
+  
+.contact form .btn-submit{
+  
+  background-color:var(--contact-color);
+  text-decoration: none;
+  border: none;
+  border-radius: var(--rounded-md);
+  width:210%;
+  padding: .5rem 0; 
+  margin-bottom: 20px;
+  color: #fff;
+  text-transform: uppercase;
+  display: grid;
+  font-size: 1em;
+  font-weight: 600;
+  place-items: center;
+}
+
+.contact form a:hover, .contact form a:focus{
+  background-color: var(--contact-color-hover);
+  outline: 0;
+  transition: background-color .8s ease-in-out;
+}
+
+/* .btn-submit{
+  width: 100%;
+  padding: 5px;
+  font-weight: 600;
+} */
+
+footer{
+  display: flex;
+  flex-direction: column;
+  height: 70px;
+  color:#fff;
+  background-color: #000;
+  justify-content: center;
+  align-items: center;
+}
+
+footer .social-icons a{
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+footer .sign{
+  display: flex;
+  right: 30px;
+  bottom: 0;
+  font-size: 10px;
+  color: rgb(255, 156, 0);
+}
+
+/* Large Screen */
+@media screen and (min-width: 780px){
+  .container .wrapper{
+    display: grid;
+    /* grid-template-columns: 1fr 2fr; */
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    box-shadow: 0 0 20px 0 rgba(0,0,0,1);
+    border-radius: 20px 20px 20px 20px;
+    /* padding: 1em; */
+    
+  }
+
+  .container .church-info{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0,.9);
+    justify-content: center;
+    align-items: center;
+  }
+
+  .church-info ul li{
+    font-size: 1em;
+  }
+  
+  .space{
+    padding-bottom: 20px ;
+  }
+  
+  .church-info ul li span{
+    font-size: 1em;
+    font-weight: 700;
+  }
+  
+  .church-info ul i{
+    color: rgb(255, 156, 0);
+    margin-right: 10px;
+  }
+  
+  .church-info ul .address{
+    margin: 0;
+    padding-left: 28px;
+    padding-bottom: 20px ;
+    max-width: 90%;
+  }
+
+  .church-info{
+    background-color: #000;
+    border-radius: 20px 0 0 20px;
+  }
+
+  .contact{
+    border-radius: 0 20px 20px 0;
+  }
+
+  .wrapper{
+    box-shadow: none;
+  }
+
+  .contact{
+    padding: 30px;
+  }
+
+  .social-box{
+    width: 100%;
+    margin-top: 40px;
+  }
+
+  .social-icons a{
+    font-size: 25px;
+  }
+
+  footer{
+    height: 100px;
+  }
+
+  footer .social-icons a{
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding-left: 30px;
+  }
+  
+  footer .sign{
+    /* display: flex; */
+    right: 30px;
+    padding-bottom: 5px;
+    margin-top: 5px;
+    /* bottom: 0; */
+    font-size: 12px;
+    color: rgb(255, 156, 0);
+  }
+
+
+
+  /* .contact form a{
+    width: 100%;
+    background-color:var(--contact-color);
+    border: none;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    border-radius: var(--rounded-md);
+    outline: none;
+  }
+  
+  .contact form a:hover, .contact form a:focus{
+    background-color: var(--contact-color-hover);
+    outline: 0;
+    transition: background-color 1s ease-in-out;
+  }
+  
+  .btn-submit{
+    font-weight: 600;
+  } */
+
+  /* .contact .head{
+    display: flex;
+    height: 100px;
+    margin: 0;
+    padding: 0;
+    justify-content:left;
+    align-items:center ;
+    background-color: #0A7ACC;
+  } */
+
+}
+
+
+
+
+
