@@ -1,10 +1,218 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;600;700&display=swap');
+
+
 *{
   margin: 0;
   padding: 0;
   font-family: 'Open Sans', sans-serif;
   box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Header/Navbar */
+.main-header {
+  position: fixed;
+  /* margin-bottom: 20%;
+  padding-bottom: 20%; */
+  height: 1000px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  height: 100px;
+  padding: 0 30px;
+  background-color: #000;
+}
+
+
+/* Logo */
+.log{
+  display: flex;
+}
+
+.main-header-name{
+  font-size: 0.7em;
+  margin-top: 5px;
+  color: rgb(255, 156, 0);
+}
+
+.logo {
+  width: 60px;
+  height: auto;
+}
+
+.logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Desktop Menu */
+.desktop-main-menu {
+  margin-right: 100px;
+  display: none;
+}
+
+.desktop-main-menu ul {
+  display: flex;
+}
+
+.desktop-main-menu ul li {
+  position: relative;
+  margin-right: 20px;
+  padding-bottom: 2px;
+  
+}
+
+.desktop-main-menu ul li a{
+  color: rgb(255, 156, 0);
+}
+
+/* Menu item bottom border */
+.desktop-main-menu ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: rgb(255, 156, 0);
+  transform: scaleX(0);
+  transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  transform-origin: right center;
+}
+
+.desktop-main-menu ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left center;
+  transition-duration: 0.4s;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  z-index: 10;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  background: none;
+  border: none;
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  top: 0;
+  left: 0;
+  background:rgb(255, 156, 0);
+  transition: all 0.5s;
+}
+
+.hamburger-middle {
+  transform: translateY(6px);
+}
+
+.hamburger-bottom {
+  transform: translateY(12px);
+}
+
+/* Transition hamburger to X when open */
+.open {
+  transform: rotate(90deg);
+  
+}
+
+.open .hamburger-top {
+  transform: rotate(45deg) translateY(6px) translateX(6px);
+  background: #fff;
+}
+
+.open .hamburger-middle {
+  display: none;
+}
+
+.open .hamburger-bottom {
+  transform: rotate(-45deg) translateY(6px) translateX(-6px);
+  background: #fff;
+}
+
+#navMenu {
+}
+
+.mobile-only {
+  display: block;
+}
+
+
+/* Mobile menu */
+.mobile-main-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 350px;
+  height: 100%;
+  background: #000;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(100%);
+  transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/* Bring menu from right */
+.show-menu {
+  transform: translateX(0);
+}
+
+.mobile-main-menu ul {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: center;
+  padding: 50px;
+  width: 100%;
+}
+
+.mobile-main-menu ul li {
+  margin-bottom: 20px;
+  font-size: 18px;
+  text-transform: uppercase;
+  border-bottom: 1px #555 dotted;
+  width: 100%;
+  text-align: right;
+  padding-bottom: 8px;
+}
+
+.mobile-main-menu ul li a {
+  color: #fff;
+  transition: color 0.6s;
+}
+
+.mobile-main-menu ul li a:hover {
+  color: #aaa;
 }
 
 :root{
@@ -28,6 +236,7 @@ body{
 
 /* ************hero settings*********** */
 .top-wrapper{
+  margin-top: 80px;
   max-width: 1170px;
   margin-left: auto;
   margin-right: auto;
@@ -273,6 +482,26 @@ footer .sign{
 
 /* Large Screen */
 @media screen and (min-width: 780px){
+
+  .desktop-main-menu {
+    display: block;
+  }
+
+  /* Hide mobile main menu items */
+.mobile-only {
+  display: none;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+}
+
+.main-header-name{
+  font-size: 1.1em;
+  margin-top: 6px;
+  color: rgb(255, 156, 0);
+}
 
   .container .wrapper{
     display: grid;
